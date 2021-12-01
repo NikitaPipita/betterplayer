@@ -79,6 +79,10 @@ class BetterPlayerConfiguration {
   ///values here: https://api.flutter.dev/flutter/painting/BoxFit-class.html
   final BoxFit fit;
 
+  ///Defines fit of the full screen video, see possible
+  ///values here: https://api.flutter.dev/flutter/painting/BoxFit-class.html
+  final BoxFit fullScreenFit;
+
   ///Defines rotation of the video in degrees. Default value is 0. Can be 0, 90, 180, 270.
   ///Angle will rotate only video box, controls will be in the same place.
   final double rotation;
@@ -151,6 +155,7 @@ class BetterPlayerConfiguration {
     this.subtitlesConfiguration = const BetterPlayerSubtitlesConfiguration(),
     this.controlsConfiguration = const BetterPlayerControlsConfiguration(),
     this.fit = BoxFit.fill,
+    this.fullScreenFit = BoxFit.fill,
     this.rotation = 0,
     this.playerVisibilityChangedBehavior,
     this.translations,
@@ -184,6 +189,7 @@ class BetterPlayerConfiguration {
     BetterPlayerSubtitlesConfiguration? subtitlesConfiguration,
     BetterPlayerControlsConfiguration? controlsConfiguration,
     BoxFit? fit,
+    BoxFit? fullScreenFit,
     double? rotation,
     Function(double visibilityFraction)? playerVisibilityChangedBehavior,
     List<BetterPlayerTranslations>? translations,
@@ -221,6 +227,7 @@ class BetterPlayerConfiguration {
       controlsConfiguration:
           controlsConfiguration ?? this.controlsConfiguration,
       fit: fit ?? this.fit,
+      fullScreenFit: fullScreenFit ?? this.fullScreenFit,
       rotation: rotation ?? this.rotation,
       playerVisibilityChangedBehavior: playerVisibilityChangedBehavior ??
           this.playerVisibilityChangedBehavior,
